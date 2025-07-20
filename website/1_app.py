@@ -37,8 +37,8 @@ conn.close()
 # 🔐 Routes
 @app.route('/')
 def index():
-return redirect(url_for('login'))
-return render_template("3_login.html")
+    return redirect(url_for('login'))
+    return render_template("3_login.html")
 
 
 @app.route('/login', methods=['GET', 'POST'])
