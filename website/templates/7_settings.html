@@ -1,0 +1,24 @@
+<!-- templates/7_settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings | SecureVaLUt</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='8_style.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ Settings</h1>
+
+    <label for="theme-toggle">🌗 Theme:</label>
+    <select id="theme-toggle" onchange="toggleTheme(this.value)">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <br><br>
+    <a href="{{ url_for('home') }}">🔙 Back to Home</a>
+  </div>
+</body>
+</html>

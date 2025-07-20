@@ -1,0 +1,70 @@
+<!-- templates/4_home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecureVaLUt | Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='8_style.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <div class="topbar">
+    <h1>SecureVaLUt 🛡️</h1>
+  <div class="actions">
+    <a href="{{ url_for('settings') }}">⚙️ Settings</a>
+    <a href="https://drive.google.com/file/d/1Zo2rOglAsJr-26seFrW2pPaXBO90L9uS/view?usp=drive_link" target="_blank">⬇️ Download App</a>
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+  </div>
+  <div class="container">
+    <h1>Welcome, {{ user }}</h1>
+    <nav>
+      <a href="{{ url_for('add') }}">Add Password</a>
+      <a href="{{ url_for('view') }}">View Vault</a>
+      <a href="{{ url_for('settings') }}">Settings</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+  </div><!-- templates/4_home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecureVaLUt | Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='8_style.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to SecureVaLUt, {{ session['user'] }}</h1>
+
+    <form method="POST" action="{{ url_for('add_entry') }}">
+      <input type="text" name="site" placeholder="Site" required><br>
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>🔐 Saved Vault Entries</h2>
+    <table>
+      <tr>
+        <th>Site</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Actions</th>
+      </tr>
+      {% for row in data %}
+        <tr>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td><a href="{{ url_for('delete_entry', entry_id=row[0]) }}">Delete</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</body>
+</html>
+
+</body>
+</html>

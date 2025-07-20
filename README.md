@@ -42,6 +42,9 @@ Update or remove credentials for any website.
 Easily switch between Light and Dark themes.
 
 🗃️ Technologies Used:
+
+For app:
+
 customtkinter: GUI components
 
 sqlite3: Local database
@@ -51,3 +54,25 @@ cryptography: Encryption using Fernet
 bcrypt: Secure master password hashing
 
 pyperclip: Clipboard copy for passwords
+   
+For demo website:
+
+Flask : Web server framework 
+
+Jinja2 Tempaltes : HTML + dynamic data
+
+static/style.css : Custom styles for website
+
+template/home.html : Home page UI
+
+app.py : Flask app logic
+
+2_requirements.text : install project dependencies for website
+
+Download Buttons : Platform based app links
+
+url_for() (JINJA func) : Auto generate resource paths 
+
+onclick="alerts(...)" : Temporary "comming soon " alerts
+
+Render Deployment : Free Live Hosting 

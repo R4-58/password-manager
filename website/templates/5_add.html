@@ -1,0 +1,22 @@
+<!-- templates/5_add.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Password - SecureVaLUt</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='8_style.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Add New Entry</h2>
+    <form method="POST">
+      <input type="text" name="site" placeholder="Site Name" required><br>
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Save</button>
+    </form>
+    <a href="{{ url_for('home') }}">← Back</a>
+  </div>
+</body>
+</html>

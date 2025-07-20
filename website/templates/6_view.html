@@ -1,0 +1,34 @@
+<!-- templates/6_view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vault - SecureVaLUt</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='8_style.css') }}">
+  <script src="{{ url_for('static', filename='theme.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Vault</h2>
+    {% if data %}
+      <table>
+        <tr>
+          <th>Site</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+        {% for row in data %}
+          <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No data saved yet.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">← Back</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* Light Theme (default) */
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #000;
+  --button-color: #007BFF;
+  --container-bg: #fff;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --button-color: #4CAF50;
+  --container-bg: #1e1e1e;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* And apply these variables wherever needed in buttons, inputs etc */
+
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--link);
+  text-decoration: none;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+}
