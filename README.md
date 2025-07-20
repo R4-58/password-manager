@@ -76,3 +76,7 @@ url_for() (JINJA func) : Auto generate resource paths
 onclick="alerts(...)" : Temporary "comming soon " alerts
 
 Render Deployment : Free Live Hosting 
+
+I have used Render to deploy my demo Website for testing and all some times maybe 
+
+the server will be inactive 😅 bec of free trail but after 3 seconds the srever will be active 
